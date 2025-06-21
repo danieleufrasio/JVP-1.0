@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Permite acesso direto a arquivos existentes (css, js, img, etc)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redireciona tudo para index.php, passando a URL amigável
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
